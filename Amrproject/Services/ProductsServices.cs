@@ -60,5 +60,20 @@ namespace Amrproject.Services
         {
             throw new NotImplementedException();
         }
+
+
+        public bool IsExist(Products entity)
+        {
+            return dbContext.Products.Any(x => x.Id == entity.Id);
+        }
+
+        public bool IsValid(Products entity)
+        {
+            return true;
+        }
     }
+
+
+
+
 }

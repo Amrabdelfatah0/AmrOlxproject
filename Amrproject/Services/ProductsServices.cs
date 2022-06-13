@@ -12,11 +12,23 @@ namespace Amrproject.Services
         {
             dbContext = _dbContext;
         }
-        public Task<bool> Add(Products entity)
+        public async Task<bool> Add(Products entity)
 
         {
-            entity.CreatedDate=entity.LastModifiedDate=DateTime.Now;
-            throw new NotImplementedException();
+            if (IsValid(entity) && !ISExist(entity))
+            {
+                entity.CreatedDate = entity.LastModifiedDate = DateTime.Now;
+                dbContext.Products.Add(entity);
+                await dbContext.SaveChangesAsync();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+
         }
 
         public Task Delete(Products entity)

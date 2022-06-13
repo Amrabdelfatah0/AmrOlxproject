@@ -48,12 +48,12 @@ namespace Amrproject.Services
 
         public bool ISExist(Products entity)
         {
-            throw new NotImplementedException();
+            return dbContext.Products.Any(x => x.Id == entity.Id);
         }
 
         public bool IsValid(Products entity)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public Task<bool> Update(Products entity)
@@ -62,15 +62,8 @@ namespace Amrproject.Services
         }
 
 
-        public bool IsExist(Products entity)
-        {
-            return dbContext.Products.Any(x => x.Id == entity.Id);
-        }
-
-        public bool IsValid(Products entity)
-        {
-            return true;
-        }
+       
+       
     }
 
 

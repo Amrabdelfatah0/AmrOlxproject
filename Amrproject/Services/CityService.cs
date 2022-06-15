@@ -1,10 +1,16 @@
-﻿using Amrproject.IRepo;
+﻿using Amrproject.Data;
+using Amrproject.IRepo;
 using Amrproject.Models.Location;
 
 namespace Amrproject.Services
 {
     public class CityService : ICityRepo
     {
+        private readonly ApplicationDbContext dbContext;
+        public CityService(ApplicationDbContext _dbContext)
+        {
+            dbContext = _dbContext;
+        }
         public Task<bool> Add(City entity)
         {
             throw new NotImplementedException();

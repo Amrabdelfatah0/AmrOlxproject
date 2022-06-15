@@ -1,10 +1,16 @@
-﻿using Amrproject.IRepo;
+﻿using Amrproject.Data;
+using Amrproject.IRepo;
 using Amrproject.Models.Location;
 
 namespace Amrproject.Services
 {
     public class GovernroteService : IGovernroteRepo
     {
+        private readonly ApplicationDbContext dbContext;
+        public GovernroteService(ApplicationDbContext _dbContext)
+        {
+            dbContext = _dbContext;
+        }
         public Task<bool> Add(Governrote entity)
         {
             throw new NotImplementedException();

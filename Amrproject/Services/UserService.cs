@@ -1,10 +1,16 @@
-﻿using Amrproject.IRepo;
+﻿using Amrproject.Data;
+using Amrproject.IRepo;
 using Amrproject.Models;
 
 namespace Amrproject.Services
 {
     public class UserService : IUser
     {
+        private readonly ApplicationDbContext dbContext;
+        public UserService(ApplicationDbContext _dbContext)
+        {
+            dbContext = _dbContext;
+        }
         public Task<bool> Add(User entity)
         {
             throw new NotImplementedException();

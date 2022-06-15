@@ -1,5 +1,6 @@
 using Amrproject.Data;
 using Amrproject.IRepo;
+using Amrproject.Models.Location;
 using Amrproject.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +17,15 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IProductsClassRepository, ProductsServices>();
+builder.Services.AddScoped<ICityRepo, CityService>();
+builder.Services.AddScoped<IGovernroteRepo, GovernroteService>();
+builder.Services.AddScoped<IMobile, MobileService>();
+builder.Services.AddScoped<IUser, UserService>();
+builder.Services.AddScoped<IUserRole, UserRoleService>();
+
+
+
+
 
 var app = builder.Build();
 

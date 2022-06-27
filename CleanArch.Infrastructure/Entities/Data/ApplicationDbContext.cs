@@ -4,6 +4,7 @@ using Amrproject.Models.Location;
 using Amrproject.Roles;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.Services.UserAccountMapping;
 
 namespace Amrproject.Data
 {
